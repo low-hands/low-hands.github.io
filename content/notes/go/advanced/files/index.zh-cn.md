@@ -1,9 +1,9 @@
 ---
-title: ফাইল ম্যানিপুলেশন
+title: 文件操作
 weight: 40
 menu:
   notes:
-    name: ফাইল ম্যানিপুলেশন
+    name: 文件操作
     identifier: notes-go-advanced-files
     parent: notes-go-advanced
     weight: 10
