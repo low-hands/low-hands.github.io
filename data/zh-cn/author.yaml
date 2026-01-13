@@ -1,8 +1,8 @@
 # some information about you
-name: "郭睿"
-nickname: "郭睿"
+name: "低手"
+nickname: "我不是高手"
 # greeting message before your name. it will default to "Hi! I am" if not provided
-greeting: "哈咯，我叫 "
+greeting: "哈咯，"
 image: "images/author/rui.jpeg"
 # give your some contact information. they will be used in the footer
 contactInfo:
