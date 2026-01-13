@@ -1,0 +1,18 @@
+# some information about you
+name: "郭睿"
+nickname: "郭睿"
+# greeting message before your name. it will default to "Hi! I am" if not provided
+greeting: "哈咯，我叫 "
+image: "images/author/rui.png"
+# give your some contact information. they will be used in the footer
+contactInfo:
+  email: "ruig0401@gmail.com"
+  phone: "+1 5875886800"
+  github: low-hands
+  linkedin: hoinky
+  # researchgate: john-doe
+
+# some summary about what you do
+summary:
+  - 我目前在加拿大英属哥伦比亚大学攻读研究生
+  - 我对AI开发感兴趣

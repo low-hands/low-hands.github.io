@@ -1,0 +1,73 @@
+# section information
+section:
+  name: Skills
+  id: skills
+  enable: true
+  weight: 2
+  showOnNavbar: true
+  filter: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+# filter buttons
+buttons:
+- name: All
+  filter: "all"
+- name: Basic
+  filter: "basic"
+- name: Language
+  filter: "language"
+# - name: Container
+#   filter: "container"
+- name: Library
+  filter: "library"
+- name: Others
+  filter: "others"
+
+# Your Skills.
+# Give a summary of you each skill in the summary section.
+skills:
+- name: Java
+  logo: /images/sections/skills/java.png
+  summary: "Proficient in Java programming. Used for website construction."
+  categories: ["basic","language"]
+  url: "https://www.java.com/"
+
+- name: Python
+  logo: /images/sections/skills/python.png
+  summary: "Using as the main language for professional AI development. Capable of writing scalable, testable, and maintainable program."
+  categories: ["basic", "language"]
+  url: "https://python.org/"
+
+# - name: Cloud Computing
+#   logo: /images/sections/skills/cloud.png
+#   summary: "Worked with most of the major clouds such as GCP, AWS, Azure etc."
+#   categories: ["others"]
+
+- name: Scikit-learn
+  logo: /images/sections/skills/sk.png
+  summary: "Experienced with the basic usage of scikit-learn library."
+  categories: ["library"]
+  url: "https://scikit-learn.org/stable/"
+
+# - name: Prometheus
+#   logo: /images/sections/skills/prometheus.png
+#   summary: "Capable of setup, configure Prometheus metrics. Experienced with PromQL, AlertManager. Also, experienced with writing metric exporters."
+#   categories: ["basic"]
+#   url: "https://prometheus.io/"
+
+# - name: Linux
+#   logo: /images/sections/skills/linux.png
+#   summary: "Using as the main operating system. Capable of writing bash/shell scripts."
+#   categories: ["others"]
+
+- name: Git
+  logo: /images/sections/skills/git.png
+  summary: "Experienced with git-based development. Mostly, use Github. Also, have experience in working with GitLab."
+  categories: ["basic"]
+  url: "https://git-scm.com/"
+
+# - name: C++
+#   logo: /images/sections/skills/c++.png
+#   summary: "Know basic C/C++ programming. Used for contest programming and problem solving."
+#   categories: ["basic", "language"]

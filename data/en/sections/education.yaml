@@ -1,0 +1,105 @@
+# section information
+section:
+  name: Education
+  id: education
+  template: sections/education.html # Use "sections/education-alt.html for alternate template.
+  enable: true
+  weight: 4
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+degrees:
+- name: M.Eng. in Elctronical and Computer Engineering
+  icon: fa-microscope
+  timeframe: 2024 - 2026
+  institution:
+    name: The University of British Columbia
+    url: "https://www.ubc.ca"
+    logo: /images/sections/education/ubc.svg
+    # Can optionally show a different logo for dark theme
+    # darkLogo: /images/sections/education/tech_college.png
+  grade: #(optional)
+    scale: GPA
+    achieved: 92.9
+    outOf: 100.0
+  
+  # publications: #(optional)
+  # - title: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  #   url: "#"
+  # - title: Fusce eu augue ut odio porttitor pulvinar.
+  #   url: "#"
+  # - title: Nullam vitae orci tincidunt purus viverra pulvinar.
+  #   url: "#"
+- name: B.Sc. in Computing Science
+  icon: fa-graduation-cap
+  timeframe: 2022 - 2024
+  institution:
+    name: University of Alberta
+    url: "https://www.ualberta.ca/en/index.html"
+    logo: /images/sections/education/ab.png
+    # Can optionally show a different logo for dark theme
+    # darkLogo: /images/sections/education/university.jpg
+  grade: #(optional)
+    scale: GPA
+    achieved: 3.86
+    outOf: 4.00
+  # takenCourses: #(optional)
+  #   # if true, the courses will be rendered as a table otherwise it will render as a list and the grades will be hidden.
+  #   showGrades: true
+  #   collapseAfter: 3
+  #   courses:
+  #   - name: Data Structures and Algorithm
+  #     achieved: 3.75
+  #     outOf: 4
+  #   - name: Network Security
+  #     achieved: 3.80
+  #     outOf: 4
+  #   - name: Operating System
+  #     achieved: 3.5
+  #     outOf: 4
+  #   - name: Artificial Intelligent
+  #     achieved: 3.75
+  #     outOf: 4
+  # publications: #(optional)
+  # - title: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  #   url: "#"
+  # - title: Fusce eu augue ut odio porttitor pulvinar.
+  #   url: "#"
+  # extracurricularActivities: #(optional)
+  # - In vitae facilisis est, eget porta sem.
+  # - Vestibulum consectetur lorem justo, at laoreet lorem feugiat et.
+  # - Duis sed massa feugiat, ornare justo et, aliquam est.
+  # - Pellentesque ut fringilla magna.
+  # customSections: #(optional)
+  #   - name: Thesis
+  #     content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  #   - name: Supervisor
+  #     content: Fusce eu augue ut odio porttitor pulvinar.
+- name: B.Eng. in Software Engineering
+  icon: fa-university
+  timeframe: 2019-2022
+  institution:
+    name: Beihang University
+    url: "https://ev.buaa.edu.cn"
+    logo: /images/sections/education/beihang.svg
+    # Can optionally show a different logo for dark theme
+    # darkLogo: /images/sections/education/science_college.png
+  grade: #(optional)
+    scale: GPA
+    achieved: 86.7
+    outOf: 100.0
+  # extracurricularActivities: #(optional)
+  # - In vitae facilisis est, eget porta sem.
+  # - Vestibulum consectetur lorem justo, at laoreet lorem feugiat et.
+  # - Duis sed massa feugiat, ornare justo et, aliquam est.
+  # - Pellentesque ut fringilla magna.
+# - name: Secondary School Certificate
+#   icon: fa-school
+#   timeframe: 2005-2010
+#   institution:
+#     name: JK School of Science
+#   grade: #(optional)
+#     scale: GPA
+#     achieved: 4.5
+#     outOf: 5

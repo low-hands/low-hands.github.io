@@ -1,0 +1,18 @@
+# some information about you
+name: "Rui Guo"
+nickname: "Rui"
+# greeting message before your name. it will default to "Hi! I am" if not provided
+greeting: "Hi, I am "
+image: "images/author/rui.png"
+# give your some contact information. they will be used in the footer
+contactInfo:
+  email: "ruig0401@gmail.com"
+  phone: "+1 5875886800"
+  github: low-hands
+  linkedin: hoinky
+  # researchgate: john-doe
+
+# some summary about what you do
+summary:
+  - I am a master student at UBC
+  - I am interested in AI software development

@@ -1,0 +1,73 @@
+# section information
+section:
+  name: 技能
+  id: skills
+  enable: true
+  weight: 2
+  showOnNavbar: true
+  filter: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+# filter buttons
+buttons:
+- name: 所有
+  filter: "all"
+- name: 基础
+  filter: "basic"
+- name: 语言
+  filter: "language"
+# - name: Container
+#   filter: "container"
+- name: 库
+  filter: "library"
+- name: 其他
+  filter: "others"
+
+# Your Skills.
+# Give a summary of you each skill in the summary section.
+skills:
+- name: Java
+  logo: /images/sections/skills/java.png
+  summary: "精通Java编程，并将其应用于网站构建。"
+  categories: ["basic","language"]
+  url: "https://www.java.com/"
+
+- name: Python
+  logo: /images/sections/skills/python.png
+  summary: "以Python作为AI专业开发的核心语言。具备编写可扩展、可测试且易于维护的代码能力。"
+  categories: ["basic", "language"]
+  url: "https://python.org/"
+
+# - name: Cloud Computing
+#   logo: /images/sections/skills/cloud.png
+#   summary: "Worked with most of the major clouds such as GCP, AWS, Azure etc."
+#   categories: ["others"]
+
+- name: Scikit-learn
+  logo: /images/sections/skills/sk.png
+  summary: "熟悉 scikit-learn 库的基础用法。"
+  categories: ["library"]
+  url: "https://scikit-learn.org/stable/"
+
+# - name: Prometheus
+#   logo: /images/sections/skills/prometheus.png
+#   summary: "Capable of setup, configure Prometheus metrics. Experienced with PromQL, AlertManager. Also, experienced with writing metric exporters."
+#   categories: ["basic"]
+#   url: "https://prometheus.io/"
+
+# - name: Linux
+#   logo: /images/sections/skills/linux.png
+#   summary: "Using as the main operating system. Capable of writing bash/shell scripts."
+#   categories: ["others"]
+
+- name: Git
+  logo: /images/sections/skills/git.png
+  summary: "熟悉基于 Git 的开发流程。主要使用 GitHub 进行协作，并具备使用 GitLab 的实际经验。"
+  categories: ["basic"]
+  url: "https://git-scm.com/"
+
+# - name: C++
+#   logo: /images/sections/skills/c++.png
+#   summary: "Know basic C/C++ programming. Used for contest programming and problem solving."
+#   categories: ["basic", "language"]
