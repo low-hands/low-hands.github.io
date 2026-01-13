@@ -30,8 +30,10 @@ jobs:
     - name: Install node modules
       run: |
         hugo mod npm pack
+        # 这一步非常关键：手动在生成的 package.json 中插入 scripts 字段
+        sed -i '/"version": "0.1.0",/a \  "scripts": {\n    "autoprefixer": "postcss"\n  },' package.json
         npm install
-        sudo npm install -g postcss-cli autoprefixer
+        npm install -g postcss-cli autoprefixer
 
     - name: Build
       run: hugo --minify
