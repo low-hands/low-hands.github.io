@@ -30,16 +30,12 @@ jobs:
     - name: Install node modules
       run: |
         hugo mod npm pack
+        node -e "const fs=require('fs'); const p=JSON.parse(fs.readFileSync('./package.json')); p.scripts=p.scripts||{}; p.scripts.autoprefixer='postcss'; fs.writeFileSync('./package.json', JSON.stringify(p, null, 2));"
         npm install
         npm install -g postcss-cli autoprefixer
 
     - name: Build
-      # 添加环境变量 HUGO_POSTCSS_COMPILE_SKIP=true (如果主题支持)
-      # 或者直接强制执行，忽略 autoprefixer 脚本
       run: hugo --minify
-      env:
-        HUGO_ENVIRONMENT: production
-        NODE_ENV: production
 
     # push the generated content into the `gh-pages` branch.
     - name: Deploy
