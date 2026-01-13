@@ -1,9 +1,5 @@
 module github.com/low-hands/low-hands.github.io
 
-go 1.19
+go 1.24.3
 
-require github.com/hugo-toha/toha/v4 v4.0.1-0.20231229170427-d3968ca711ef // indirect
-
-replace(
-    github.com/hugo-toha/toha/v4 => github.com/low-hands/low-hands.github.io/v4 main
-)
+require github.com/hugo-toha/toha/v4 v4.13.0 // indirect
