@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>博文 on 郭睿的博客</title><link>https://low-hands.github.io/zh-cn/posts/</link><description>Recent content in 博文 on 郭睿的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 13 Jan 2026 01:07:25 -0800</lastBuildDate><atom:link href="https://low-hands.github.io/zh-cn/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>短代码示例</title><link>https://low-hands.github.io/zh-cn/posts/shortcodes/</link><pubDate>Tue, 13 Jan 2026 01:07:25 -0800</pubDate><guid>https://low-hands.github.io/zh-cn/posts/shortcodes/</guid><description>&lt;p&gt;这是一个示例帖子，旨在测试以下内容：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;默认的主图（Hero Image）。&lt;/li&gt;
+&lt;li&gt;不同的短代码（Shortcodes）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="提示框-alert"&gt;提示框 (Alert)&lt;/h2&gt;
+&lt;p&gt;本主题支持以下几种提示框。&lt;/p&gt;
+&lt;div class="alert success"&gt;
+&lt;span&gt;&lt;i data-feather="check-circle"&gt;&lt;/i&gt;&lt;/span&gt;
+&lt;span&gt;&lt;strong&gt;这是一个&lt;code&gt;type=&amp;quot;success&amp;quot;&lt;/code&gt; 的例子&lt;/strong&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="alert danger"&gt;
+&lt;span&gt;&lt;i data-feather="alert-octagon"&gt;&lt;/i&gt;&lt;/span&gt;
+&lt;span&gt;&lt;strong&gt;这是一个 &lt;code&gt;type=&amp;quot;danger&amp;quot;&lt;/code&gt; 的例子&lt;/strong&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="alert warning"&gt;
+&lt;span&gt;&lt;i data-feather="alert-triangle"&gt;&lt;/i&gt;&lt;/span&gt;
+&lt;span&gt;&lt;strong&gt;这是一个 &lt;code&gt;type=&amp;quot;warning&amp;quot;&lt;/code&gt; 的例子&lt;/strong&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="alert info"&gt;
+&lt;span&gt;&lt;i data-feather="info"&gt;&lt;/i&gt;&lt;/span&gt;
+&lt;span&gt;&lt;strong&gt;这是一个 &lt;code&gt;type=&amp;quot;info&amp;quot;&lt;/code&gt; 的例子&lt;/strong&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="alert dark"&gt;
+&lt;span&gt;&lt;i data-feather="alert-circle"&gt;&lt;/i&gt;&lt;/span&gt;
+&lt;span&gt;&lt;strong&gt;这是一个 &lt;code&gt;type=&amp;quot;dark&amp;quot;&lt;/code&gt; 的例子&lt;/strong&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="alert primary"&gt;
+&lt;span&gt;&lt;i data-feather="alert-circle"&gt;&lt;/i&gt;&lt;/span&gt;
+&lt;span&gt;&lt;strong&gt;这是一个 &lt;code&gt;type=&amp;quot;primary&amp;quot;&lt;/code&gt; 的例子&lt;/strong&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="alert secondary"&gt;
+&lt;span&gt;&lt;i data-feather="alert-circle"&gt;&lt;/i&gt;&lt;/span&gt;
+&lt;span&gt;&lt;strong&gt;这是一个 &lt;code&gt;type=&amp;quot;secondary&amp;quot;&lt;/code&gt; 的例子&lt;/strong&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;h2 id="图片-image"&gt;图片 (Image)&lt;/h2&gt;
+&lt;h4 id="不带任何属性的示例图片"&gt;不带任何属性的示例图片。&lt;/h4&gt;
+&lt;img src="https://low-hands.github.io/posts/shortcodes/boat.jpg"
+alt="海上的小船"
+&gt;
+&lt;div style="margin-top: 3rem;"&gt;&lt;/div&gt;
+&lt;h4 id="带有-height高度和-width宽度属性的示例图片"&gt;带有 &lt;code&gt;height&lt;/code&gt;（高度）和 &lt;code&gt;width&lt;/code&gt;（宽度）属性的示例图片。&lt;/h4&gt;
+&lt;img src="https://low-hands.github.io/posts/shortcodes/boat.jpg"
+alt="海上的小船"
+width="600"
+height="400"
+&gt;
+&lt;div style="margin-top: 3rem;"&gt;&lt;/div&gt;
+&lt;h4 id="带有-height-和-width-属性的居中对齐图片"&gt;带有 &lt;code&gt;height&lt;/code&gt; 和 &lt;code&gt;width&lt;/code&gt; 属性的居中对齐图片。&lt;/h4&gt;
+&lt;img src="https://low-hands.github.io/posts/shortcodes/boat.jpg"
+alt="海上的小船"
+width="600"
+height="400"
+class="center"
+&gt;
+&lt;div style="margin-top: 3rem;"&gt;&lt;/div&gt;
+&lt;h4 id="带有-float浮动属性的图片"&gt;带有 &lt;code&gt;float&lt;/code&gt;（浮动）属性的图片。&lt;/h4&gt;
+&lt;img src="https://low-hands.github.io/posts/shortcodes/boat.jpg"
+alt="A boat at the sea"
+width="500"
+height="200"
+style="float: right;"
+&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas lectus sed leo ultricies ultricies. Praesent tellus risus, eleifend vel efficitur ac, venenatis sit amet sem. Ut ut egestas erat. Fusce ut leo turpis. Morbi consectetur sed lacus vitae vehicula. Cras gravida turpis id eleifend volutpat. Suspendisse nec ipsum eu erat finibus dictum. Morbi volutpat nulla purus, vel maximus ex molestie id. Nullam posuere est urna, at fringilla eros venenatis quis.&lt;/p&gt;</description></item><item><title>Markdown 样例</title><link>https://low-hands.github.io/zh-cn/posts/markdown-sample/</link><pubDate>Tue, 13 Jan 2026 00:43:25 -0800</pubDate><guid>https://low-hands.github.io/zh-cn/posts/markdown-sample/</guid><description>&lt;p&gt;这是一个示例帖子，旨在测试以下内容：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不同的文章作者。&lt;/li&gt;
+&lt;li&gt;目录。&lt;/li&gt;
+&lt;li&gt;Markdown 内容渲染。&lt;/li&gt;
+&lt;li&gt;数学公式渲染。&lt;/li&gt;
+&lt;li&gt;表情符号渲染。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id="markdown-语法渲染"&gt;Markdown 语法渲染&lt;/h1&gt;
+&lt;h2 id="标题-headings"&gt;标题 (Headings)&lt;/h2&gt;
+&lt;p&gt;以下 HTML &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;—&lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; 元素代表六个级别的章节标题。&lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; 是最高级别，而 &lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; 是最低级别。&lt;/p&gt;
+&lt;h1 id="h1"&gt;H1&lt;/h1&gt;
+&lt;h2 id="h2"&gt;H2&lt;/h2&gt;
+&lt;h3 id="h3"&gt;H3&lt;/h3&gt;
+&lt;h4 id="h4"&gt;H4&lt;/h4&gt;
+&lt;h5 id="h5"&gt;H5&lt;/h5&gt;
+&lt;h6 id="h6"&gt;H6&lt;/h6&gt;
+&lt;h2 id="段落-paragraph"&gt;段落 (Paragraph)&lt;/h2&gt;
+&lt;p&gt;Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.&lt;/p&gt;</description></item></channel></rss>
