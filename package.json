@@ -60,8 +60,5 @@
     "typeit": "^8.8.7"
   },
   "name": "hugo-toha.github.io",
-  "version": "0.1.0",
-  "scripts": {
-    "autoprefixer": "postcss"
-  }
+  "version": "0.1.0"
 }
