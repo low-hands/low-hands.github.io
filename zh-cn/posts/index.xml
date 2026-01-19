@@ -1,14 +1,54 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>博文 on 郭睿的博客</title><link>https://low-hands.github.io/zh-cn/posts/</link><description>Recent content in 博文 on 郭睿的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 18 Jan 2026 22:21:00 -0800</lastBuildDate><atom:link href="https://low-hands.github.io/zh-cn/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 27 - 移除元素</title><link>https://low-hands.github.io/zh-cn/posts/algorithm/twopointers/leetcode-27-%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/</link><pubDate>Sun, 18 Jan 2026 22:21:00 -0800</pubDate><guid>https://low-hands.github.io/zh-cn/posts/algorithm/twopointers/leetcode-27-%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/</guid><description>&lt;p&gt;&lt;a href="https://leetcode.cn/problems/remove-element/description/" target="_blank" rel="noopener"&gt;题目链接&lt;/a&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>博文 on 郭睿的博客</title><link>https://low-hands.github.io/zh-cn/posts/</link><description>Recent content in 博文 on 郭睿的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 19 Jan 2026 12:10:00 -0800</lastBuildDate><atom:link href="https://low-hands.github.io/zh-cn/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 344 - 反转字符串</title><link>https://low-hands.github.io/zh-cn/posts/algorithm/twopointers/leetcode-344-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/</link><pubDate>Mon, 19 Jan 2026 12:10:00 -0800</pubDate><guid>https://low-hands.github.io/zh-cn/posts/algorithm/twopointers/leetcode-344-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid><description>&lt;p&gt;&lt;a href="https://leetcode.cn/problems/reverse-string/description/" target="_blank" rel="noopener"&gt;题目链接&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="题目描述"&gt;题目描述&lt;/h2&gt;
-&lt;p&gt;给你一个数组 nums 和一个值 val，你需要 原地 移除所有数值等于 val 的元素，并返回移除后数组的新长度。&lt;/p&gt;
-&lt;p&gt;不要使用额外的数组空间，你必须仅使用 O(1) 额外空间并原地修改输入数组。&lt;/p&gt;
-&lt;p&gt;元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。&lt;/p&gt;
-&lt;p&gt;示例 1: 给定 &lt;code&gt;nums = [3,2,2,3], val = 3&lt;/code&gt;, 函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。 你不需要考虑数组中超出新长度后面的元素。&lt;/p&gt;
-&lt;p&gt;示例 2: 给定 &lt;code&gt;nums = [0,1,2,2,3,0,4,2], val = 2&lt;/code&gt;, 函数应该返回新的长度 5, 并且 nums 中的前五个元素为 0, 1, 3, 0, 4。&lt;/p&gt;
+&lt;p&gt;编写一个函数，其作用是将输入的字符串反转过来。输入字符串以字符数组 s 的形式给出。&lt;/p&gt;
+&lt;p&gt;不要给另外的数组分配额外的空间，你必须原地修改输入数组、使用 O(1) 的额外空间解决这一问题。&lt;/p&gt;
+&lt;p&gt;示例 1：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;输入：s = [&amp;ldquo;h&amp;rdquo;,&amp;ldquo;e&amp;rdquo;,&amp;ldquo;l&amp;rdquo;,&amp;ldquo;l&amp;rdquo;,&amp;ldquo;o&amp;rdquo;]
+输出：[&amp;ldquo;o&amp;rdquo;,&amp;ldquo;l&amp;rdquo;,&amp;ldquo;l&amp;rdquo;,&amp;ldquo;e&amp;rdquo;,&amp;ldquo;h&amp;rdquo;]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;示例 2：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;输入：s = [&amp;ldquo;H&amp;rdquo;,&amp;ldquo;a&amp;rdquo;,&amp;ldquo;n&amp;rdquo;,&amp;ldquo;n&amp;rdquo;,&amp;ldquo;a&amp;rdquo;,&amp;ldquo;h&amp;rdquo;]
+输出：[&amp;ldquo;h&amp;rdquo;,&amp;ldquo;a&amp;rdquo;,&amp;ldquo;n&amp;rdquo;,&amp;ldquo;n&amp;rdquo;,&amp;ldquo;a&amp;rdquo;,&amp;ldquo;H&amp;rdquo;]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="思路"&gt;思路&lt;/h2&gt;
+&lt;p&gt;相向指针：一个指针在起点，一个指针在终点&lt;/p&gt;
+&lt;p&gt;两端同时往内收，步长一致，直到两者错过（左大于右），则遍历结束&lt;/p&gt;
+&lt;h3 id="初始化"&gt;初始化&lt;/h3&gt;
+&lt;p&gt;左指针为起点&lt;code&gt;0&lt;/code&gt;，有指针为终点&lt;code&gt;len(s)-1&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id="循环条件"&gt;循环条件&lt;/h3&gt;
+&lt;p&gt;当两者相遇后终止循环，如果两者索引相同的时候（数组长度为奇数），该元素可以不进入循环进行交换，所以while可以不包括等号&lt;/p&gt;
+&lt;p&gt;包括等号也可以，相当于中间元素与自己完成了一次交换&lt;/p&gt;
+&lt;h2 id="代码"&gt;代码&lt;/h2&gt;
+&lt;h3 id="python"&gt;Python&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Solution&lt;/span&gt;(object):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;reverseString&lt;/span&gt;(self, s):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; :type s: List[str]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; :rtype: None Do not return anything, modify s in-place instead.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; left &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; right &lt;span style="color:#f92672"&gt;=&lt;/span&gt; len(s) &lt;span style="color:#f92672"&gt;-&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;while&lt;/span&gt; left &lt;span style="color:#f92672"&gt;&amp;lt;&lt;/span&gt; right:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; i &lt;span style="color:#f92672"&gt;=&lt;/span&gt; s[left]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; s[left] &lt;span style="color:#f92672"&gt;=&lt;/span&gt; s[right]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; s[right] &lt;span style="color:#f92672"&gt;=&lt;/span&gt; i
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; left &lt;span style="color:#f92672"&gt;+=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; right &lt;span style="color:#f92672"&gt;-=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; s
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="复杂度分析"&gt;复杂度分析&lt;/h2&gt;
+&lt;p&gt;时间复杂度： O(n) （while单循环，单循环内都是常数时间的操作）&lt;/p&gt;</description></item><item><title>Leetcode 27 - 移除元素</title><link>https://low-hands.github.io/zh-cn/posts/algorithm/twopointers/leetcode-27-%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/</link><pubDate>Sun, 18 Jan 2026 22:21:00 -0800</pubDate><guid>https://low-hands.github.io/zh-cn/posts/algorithm/twopointers/leetcode-27-%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/</guid><description>&lt;p&gt;&lt;a href="https://leetcode.cn/problems/remove-element/description/" target="_blank" rel="noopener"&gt;题目链接&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="题目描述"&gt;题目描述&lt;/h2&gt;
+&lt;p&gt;给你一个数组 nums 和一个值 val，你需要 原地 移除所有数值等于 val 的元素，并返回移除后数组的新长度&lt;/p&gt;
+&lt;p&gt;不要使用额外的数组空间，你必须仅使用 O(1) 额外空间并原地修改输入数组&lt;/p&gt;
+&lt;p&gt;元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素&lt;/p&gt;
+&lt;p&gt;示例 1: 给定 &lt;code&gt;nums = [3,2,2,3], val = 3&lt;/code&gt;, 函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。 你不需要考虑数组中超出新长度后面的元素&lt;/p&gt;
+&lt;p&gt;示例 2: 给定 &lt;code&gt;nums = [0,1,2,2,3,0,4,2], val = 2&lt;/code&gt;, 函数应该返回新的长度 5, 并且 nums 中的前五个元素为 0, 1, 3, 0, 4&lt;/p&gt;
 &lt;p&gt;你不需要考虑数组中超出新长度后面的元素&lt;/p&gt;
 &lt;h2 id="思路"&gt;思路&lt;/h2&gt;
 &lt;p&gt;快慢指针：一个快指针，一个慢指针，在一个for循环下完成，比暴力更高效&lt;/p&gt;
-&lt;p&gt;快慢指针是同向指针的一种，只是快慢指针的步长一般都是固定的。&lt;/p&gt;
+&lt;p&gt;快慢指针是同向指针的一种，只是快慢指针的步长一般都是固定的&lt;/p&gt;
 &lt;p&gt;慢指针用于存放非&lt;code&gt;val&lt;/code&gt;的元素，快指针用于跳过为&lt;code&gt;val&lt;/code&gt;的元素&lt;/p&gt;
 &lt;p&gt;快指针遍历完即代表结束，直接递增即可&lt;/p&gt;
 &lt;p&gt;慢指针的增长只依赖于判断当前元素，题目不要求考虑不符合要求的元素部分，所以慢指针需要遇到符合条件的元素（这个需要快指针来帮忙判断）才能+1&lt;/p&gt;
