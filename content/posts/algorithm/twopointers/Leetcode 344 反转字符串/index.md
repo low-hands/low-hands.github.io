@@ -73,5 +73,3 @@ Space Complexity: O(1) (modified in the original array, no other new array space
 
 ## Takeaways
 - "Reversing" often implies the use of opposite-direction pointers. Since the modification must be **in-place**, swapping elements is the primary strategy, which naturally leads to considering a two-pointer approach without allocating a new array.
-- In Python, strings (or lists of characters) can be accessed directly using index notation, such as `s[i]`.
-- **in-place** stands for modifying the array at its original location.

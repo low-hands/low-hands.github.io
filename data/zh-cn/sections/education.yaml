@@ -16,7 +16,7 @@ degrees:
   institution:
     name: 英属哥伦比亚大学
     url: "https://www.ubc.ca"
-    logo: /images/sections/education/ubc.svg
+    logo: /images/sections/education/ubc.png
     # Can optionally show a different logo for dark theme
     # darkLogo: /images/sections/education/tech_college.png
   grade: #(optional)
@@ -82,7 +82,7 @@ degrees:
   institution:
     name: 北京航空航天大学
     url: "https://ev.buaa.edu.cn"
-    logo: /images/sections/education/beihang.svg
+    logo: /images/sections/education/buaa.png
     # Can optionally show a different logo for dark theme
     # darkLogo: /images/sections/education/science_college.png
   grade: #(optional)
