@@ -1,4 +1,53 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>算法 on 郭睿的博客</title><link>https://low-hands.github.io/zh-cn/posts/algorithm/</link><description>Recent content in 算法 on 郭睿的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 19 Jan 2026 12:10:00 -0800</lastBuildDate><atom:link href="https://low-hands.github.io/zh-cn/posts/algorithm/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 344 - 反转字符串</title><link>https://low-hands.github.io/zh-cn/posts/algorithm/twopointers/leetcode-344-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/</link><pubDate>Mon, 19 Jan 2026 12:10:00 -0800</pubDate><guid>https://low-hands.github.io/zh-cn/posts/algorithm/twopointers/leetcode-344-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid><description>&lt;p&gt;&lt;a href="https://leetcode.cn/problems/reverse-string/description/" target="_blank" rel="noopener"&gt;题目链接&lt;/a&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>算法 on 郭睿的博客</title><link>https://low-hands.github.io/zh-cn/posts/algorithm/</link><description>Recent content in 算法 on 郭睿的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 19 Jan 2026 23:12:00 -0800</lastBuildDate><atom:link href="https://low-hands.github.io/zh-cn/posts/algorithm/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 541 - 反转字符串II</title><link>https://low-hands.github.io/zh-cn/posts/algorithm/twopointers/leetcode-541-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2ii/</link><pubDate>Mon, 19 Jan 2026 23:12:00 -0800</pubDate><guid>https://low-hands.github.io/zh-cn/posts/algorithm/twopointers/leetcode-541-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2ii/</guid><description>&lt;p&gt;&lt;a href="https://leetcode.cn/problems/reverse-string-ii/description/" target="_blank" rel="noopener"&gt;题目链接&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="题目描述"&gt;题目描述&lt;/h2&gt;
+&lt;p&gt;给定一个字符串 s 和一个整数 k，从字符串开头算起, 每计数至 2k 个字符，就反转这 2k 个字符中的前 k 个字符。&lt;/p&gt;
+&lt;p&gt;如果剩余字符少于 k 个，则将剩余字符全部反转。&lt;/p&gt;
+&lt;p&gt;如果剩余字符小于 2k 但大于或等于 k 个，则反转前 k 个字符，其余字符保持原样。&lt;/p&gt;
+&lt;p&gt;示例:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;输入: s = &amp;ldquo;abcdefg&amp;rdquo;, k = 2
+输出: &amp;ldquo;bacdfeg&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="思路"&gt;思路&lt;/h2&gt;
+&lt;p&gt;我使用的是最简单的思路，即将这条题目理解为局部的反转字符串&lt;/p&gt;
+&lt;p&gt;所以一部分代码就是反转字符串，然后外层再嵌套一个选取局部区间的循环即可&lt;/p&gt;
+&lt;h3 id="初始化"&gt;初始化&lt;/h3&gt;
+&lt;p&gt;反转字符串部分为双指针操作，即相向双指针，左指针为起点，右指针为终点
+外层嵌套直接一个&lt;code&gt;for&lt;/code&gt;循环或者&lt;code&gt;while&lt;/code&gt;循环，根据剩余字符的数量分类讨论&lt;/p&gt;
+&lt;h3 id="循环条件"&gt;循环条件&lt;/h3&gt;
+&lt;p&gt;对反转字符串&lt;code&gt;reverse&lt;/code&gt;，两个指针相遇后循环停止&lt;/p&gt;
+&lt;p&gt;外层循环即遍历完整个字符串数组即可，不过步长不为1，而是&lt;code&gt;2*k&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="代码"&gt;代码&lt;/h2&gt;
+&lt;h3 id="python"&gt;Python&lt;/h3&gt;
+&lt;h4 id="1-简单粗暴"&gt;1. 简单粗暴&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Solution&lt;/span&gt;(object):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;reverseStr&lt;/span&gt;(self, s, k):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; :type s: str
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; :type k: int
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; :rtype: str
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; l &lt;span style="color:#f92672"&gt;=&lt;/span&gt; len(s)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; s &lt;span style="color:#f92672"&gt;=&lt;/span&gt; list(s)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; left &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;while&lt;/span&gt;(left&lt;span style="color:#f92672"&gt;&amp;lt;&lt;/span&gt;l):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt;(left&lt;span style="color:#f92672"&gt;+&lt;/span&gt;k&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt;l&lt;span style="color:#f92672"&gt;-&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;reverse(s,left,l &lt;span style="color:#f92672"&gt;-&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;else&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;reverse(s,left,left&lt;span style="color:#f92672"&gt;+&lt;/span&gt;k &lt;span style="color:#f92672"&gt;-&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; left&lt;span style="color:#f92672"&gt;+=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;&lt;span style="color:#f92672"&gt;*&lt;/span&gt;k
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; s &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;.&lt;/span&gt;join(s)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; s
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;reverse&lt;/span&gt;(self,s,left, right):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;while&lt;/span&gt;(left&lt;span style="color:#f92672"&gt;&amp;lt;&lt;/span&gt;right):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; x &lt;span style="color:#f92672"&gt;=&lt;/span&gt; s[left]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; s[left] &lt;span style="color:#f92672"&gt;=&lt;/span&gt; s[right]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; s[right] &lt;span style="color:#f92672"&gt;=&lt;/span&gt; x
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; left &lt;span style="color:#f92672"&gt;+=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; right &lt;span style="color:#f92672"&gt;-=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; s
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id="复杂度分析"&gt;复杂度分析&lt;/h5&gt;
+&lt;p&gt;时间复杂度： O(n) （尽管是嵌套循环，但是对于外循环中的每个元素，它的&lt;code&gt;reverse&lt;/code&gt;是针对有限个元素left to right的，而不是每个元素都要再循环n次，所以依旧是常数次）&lt;/p&gt;</description></item><item><title>Leetcode 344 - 反转字符串</title><link>https://low-hands.github.io/zh-cn/posts/algorithm/twopointers/leetcode-344-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/</link><pubDate>Mon, 19 Jan 2026 12:10:00 -0800</pubDate><guid>https://low-hands.github.io/zh-cn/posts/algorithm/twopointers/leetcode-344-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid><description>&lt;p&gt;&lt;a href="https://leetcode.cn/problems/reverse-string/description/" target="_blank" rel="noopener"&gt;题目链接&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="题目描述"&gt;题目描述&lt;/h2&gt;
 &lt;p&gt;编写一个函数，其作用是将输入的字符串反转过来。输入字符串以字符数组 s 的形式给出。&lt;/p&gt;
 &lt;p&gt;不要给另外的数组分配额外的空间，你必须原地修改输入数组、使用 O(1) 的额外空间解决这一问题。&lt;/p&gt;
