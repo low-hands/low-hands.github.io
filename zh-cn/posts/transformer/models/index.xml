@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>模型 on 郭睿的博客</title><link>https://low-hands.github.io/zh-cn/posts/transformer/models/</link><description>Recent content in 模型 on 郭睿的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 27 Jan 2026 16:49:00 -0800</lastBuildDate><atom:link href="https://low-hands.github.io/zh-cn/posts/transformer/models/index.xml" rel="self" type="application/rss+xml"/><item><title>长短期记忆网络 LSTM</title><link>https://low-hands.github.io/zh-cn/posts/transformer/models/lstm/</link><pubDate>Tue, 27 Jan 2026 16:49:00 -0800</pubDate><guid>https://low-hands.github.io/zh-cn/posts/transformer/models/lstm/</guid><description>&lt;h1 id="结构"&gt;结构&lt;/h1&gt;
+&lt;p&gt;&lt;img src="structure.png" alt="structure"&gt;
+纵向看，每一列相当于一个小的传统神经网络&lt;/p&gt;
+&lt;p&gt;x：输入层，长度为word embedding的维度&lt;/p&gt;
+&lt;p&gt;U：输入层到隐藏层的权重&lt;/p&gt;
+&lt;p&gt;s：隐藏层 = f(U * xt + W * s(t-1) + bias),即输入层的计算结果加上上一时刻的结果乘上一个权重W&lt;/p&gt;
+&lt;p&gt;V: 隐藏层到输出层的权重&lt;/p&gt;
+&lt;p&gt;o：输出 = softmax(V * st + bias)&lt;/p&gt;
+&lt;h1 id="注意"&gt;注意&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;由公式可见，每个隐藏层s的值不仅依赖于当前时刻的输入，而且依赖于&lt;strong&gt;上一个时刻的的结果s(t-1)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;U,V,W都是共享的&lt;/li&gt;
+&lt;li&gt;不一定每一个时刻都要有一个输出，也就是说不是每一个小神经网络都必须有输出，它可以是不完整的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="举例"&gt;举例&lt;/h1&gt;
+&lt;p&gt;&lt;img src="8397aaf6-1669-46b3-8465-791ed748404f.png" alt="example"&gt;&lt;/p&gt;
+&lt;p&gt;这是一个时间序列做预测的例子，一共有三天的数据，预测明天的数据&lt;/p&gt;
+&lt;p&gt;w1 = U = 1.8， w2 = W = -0.5，w3 = V = 1.1&lt;/p&gt;
+&lt;p&gt;x0 = 1, x1 = 0.5, x2 = 0.5
+这里的输入只是数字而不是向量&lt;/p&gt;
+&lt;h2 id="day0"&gt;Day0&lt;/h2&gt;
+&lt;p&gt;s0 = f(1.8 * 1 + -0.5 * 0) = f(1.8) = 1.8&lt;/p&gt;</description></item><item><title>循环神经网络 RNN</title><link>https://low-hands.github.io/zh-cn/posts/transformer/models/rnn/</link><pubDate>Mon, 26 Jan 2026 23:57:00 -0800</pubDate><guid>https://low-hands.github.io/zh-cn/posts/transformer/models/rnn/</guid><description>&lt;h2 id="结构"&gt;结构&lt;/h2&gt;
+&lt;p&gt;&lt;img src="https://low-hands.github.io/posts/transformer/models/rnn/structure.png" alt="structure"&gt;
+纵向看，每一列相当于一个小的传统神经网络&lt;/p&gt;
+&lt;p&gt;x：输入层，长度为word embedding的维度&lt;/p&gt;
+&lt;p&gt;U：输入层到隐藏层的权重&lt;/p&gt;
+&lt;p&gt;s：隐藏层 = f(U * xt + W * s(t-1) + bias),即输入层的计算结果加上上一时刻的结果乘上一个权重W&lt;/p&gt;
+&lt;p&gt;V: 隐藏层到输出层的权重&lt;/p&gt;
+&lt;p&gt;o：输出 = softmax(V * st + bias)&lt;/p&gt;
+&lt;h2 id="注意"&gt;注意&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;由公式可见，每个隐藏层s的值不仅依赖于当前时刻的输入，而且依赖于&lt;strong&gt;上一个时刻的的结果s(t-1)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;U,V,W都是共享的&lt;/li&gt;
+&lt;li&gt;不一定每一个时刻都要有一个输出，也就是说不是每一个小神经网络都必须有输出，它可以是不完整的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="举例"&gt;举例&lt;/h2&gt;
+&lt;p&gt;&lt;img src="https://low-hands.github.io/posts/transformer/models/rnn/8397aaf6-1669-46b3-8465-791ed748404f.png" alt="example"&gt;&lt;/p&gt;
+&lt;p&gt;这是一个时间序列做预测的例子，一共有三天的数据，预测明天的数据&lt;/p&gt;
+&lt;p&gt;w1 = U = 1.8， w2 = W = -0.5，w3 = V = 1.1&lt;/p&gt;
+&lt;p&gt;x0 = 1, x1 = 0.5, x2 = 0.5
+这里的输入只是数字而不是向量&lt;/p&gt;
+&lt;h3 id="day0"&gt;Day0&lt;/h3&gt;
+&lt;p&gt;s0 = f(1.8 * 1 + -0.5 * 0) = f(1.8) = 1.8&lt;/p&gt;</description></item></channel></rss>

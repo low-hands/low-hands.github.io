@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LLM architecture on Rui's Blog</title><link>https://low-hands.github.io/posts/internship/llm/llm-architecture/</link><description>Recent content in LLM architecture on Rui's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 02 Mar 2026 23:25:00 -0800</lastBuildDate><atom:link href="https://low-hands.github.io/posts/internship/llm/llm-architecture/index.xml" rel="self" type="application/rss+xml"/><item><title>Encoder-only</title><link>https://low-hands.github.io/posts/internship/llm/llm-architecture/encoder-only/</link><pubDate>Mon, 02 Mar 2026 23:25:00 -0800</pubDate><guid>https://low-hands.github.io/posts/internship/llm/llm-architecture/encoder-only/</guid><description>&lt;h1 id="what-is-pre-training"&gt;What is Pre-training?&lt;/h1&gt;
+&lt;p&gt;Initializing neural network model parameters through &lt;strong&gt;self-supervised learning&lt;/strong&gt; (unlabeled data).&lt;/p&gt;
+&lt;p&gt;The goal is to learn a &lt;strong&gt;universal language understanding capability&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id="bert"&gt;BERT&lt;/h1&gt;
+&lt;h2 id="bert-pre-training-tasks"&gt;BERT Pre-training Tasks&lt;/h2&gt;
+&lt;h3 id="masked-language-modeling-mlm"&gt;Masked Language Modeling (MLM)&lt;/h3&gt;
+&lt;p&gt;A certain percentage (15%) of tokens in the input sequence are replaced, and the model is tasked with predicting what those original words were.&lt;/p&gt;
+&lt;h4 id="the-8-1-1-rule"&gt;The 8-1-1 Rule&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;80%&lt;/strong&gt; of the selected tokens are replaced with &lt;code&gt;[MASK]&lt;/code&gt;: Acts like a cloze test, enabling the model to learn bidirectional semantic context.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;10%&lt;/strong&gt; are replaced with a &lt;strong&gt;random token&lt;/strong&gt; from the vocabulary: Since the model doesn&amp;rsquo;t know which tokens are random, this improves error-correction capabilities and forces the model to rely on the global context to generate the correct vector representation.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;10%&lt;/strong&gt; remain as the &lt;strong&gt;original token&lt;/strong&gt;: This anchors the model&amp;rsquo;s representations toward the actual &amp;ldquo;true&amp;rdquo; embeddings.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="optimization-objective"&gt;Optimization Objective&lt;/h4&gt;
+&lt;p&gt;$$\mathcal{L}&lt;em&gt;{MLM} = - \sum&lt;/em&gt;{i \in m} \log P(x_i | \tilde{X}; \theta)$$
+Where $\tilde{X}$ is the corrupted input sequence, $m$ is the set of chosen masked positions, and $\theta$ represents the model parameters.&lt;/p&gt;</description></item></channel></rss>

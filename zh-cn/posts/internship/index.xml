@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>实习八股 on 郭睿的博客</title><link>https://low-hands.github.io/zh-cn/posts/internship/</link><description>Recent content in 实习八股 on 郭睿的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 03 Mar 2026 15:38:00 -0800</lastBuildDate><atom:link href="https://low-hands.github.io/zh-cn/posts/internship/index.xml" rel="self" type="application/rss+xml"/><item><title>Encoder-only</title><link>https://low-hands.github.io/zh-cn/posts/internship/llm/llm-architecture/encoder-only/</link><pubDate>Mon, 02 Mar 2026 23:25:00 -0800</pubDate><guid>https://low-hands.github.io/zh-cn/posts/internship/llm/llm-architecture/encoder-only/</guid><description>&lt;h1 id="什么是预训练"&gt;什么是预训练&lt;/h1&gt;
+&lt;p&gt;通过自监督（无标注）来初始化神经网络模型参数&lt;/p&gt;
+&lt;p&gt;学习一种通用的语言理解能力&lt;/p&gt;
+&lt;h1 id="bert"&gt;BERT&lt;/h1&gt;
+&lt;h2 id="bert的预训练任务"&gt;BERT的预训练任务&lt;/h2&gt;
+&lt;h3 id="masked-language-modeling"&gt;Masked Language Modeling&lt;/h3&gt;
+&lt;p&gt;将输入序列中的一部分（15%）token替换掉，然后去预测,让模型去预测这些词是什么。&lt;/p&gt;
+&lt;h4 id="8-1-1"&gt;8-1-1&lt;/h4&gt;
+&lt;p&gt;80%的词被设为&lt;code&gt;[MASK]&lt;/code&gt;：完形填空，能联系上下文的双向语义&lt;/p&gt;
+&lt;p&gt;10%被替换为词表中的任意随机token：模型不知道哪些是随机的，可以提高模型的纠错能力。逼迫模型联系全局语境，根据语境生成预测的词向量。&lt;/p&gt;
+&lt;p&gt;10%保持原始token不变：把模型对词的表征拉向真实的表征&lt;/p&gt;
+&lt;h4 id="优化目标"&gt;优化目标&lt;/h4&gt;
+&lt;p&gt;$$\mathcal{L}&lt;em&gt;{MLM} = - \sum&lt;/em&gt;{i \in m} \log P(x_i | \tilde{X}; \theta)$$
+输入的损坏序列为 $\tilde{X}$，被选中的掩码位置集合为 $m$，$\theta$ 为模型参数&lt;/p&gt;
+&lt;p&gt;模型预测出第 $i$ 个位置真实单词 $x_i$ 的概率 $P$ 越大，取对数后再加负号得到的损失值 $\mathcal{L}$ 就越小&lt;/p&gt;
+&lt;p&gt;也就是说：虽然模型在顶层其实会输出句子中每一个词的预测结果（包括那 85% 没有被选中的正常词），但系统在计算 Loss 时，只挑出那 15% 被选中（无论是变 [MASK]、变随机词还是保持原词）的位置进行计算。 剩下 85% 位置的输出会被直接无视，不参与打分。&lt;/p&gt;
+&lt;h3 id="next-sentence-prediction"&gt;Next Sentence Prediction&lt;/h3&gt;
+&lt;p&gt;随机抽取句子对（A，B），判断B是不是A的后续句子。增强跨句子理解的能力&lt;/p&gt;
+&lt;p&gt;50%真组合，50%假组合&lt;/p&gt;
+&lt;h4 id="cls--a--sep--b--sep"&gt;[CLS] + A + [SEP] + B + [SEP]&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;[CLS]&lt;/code&gt;分类符，放在序列首位判断是不是next&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;[SEP]&lt;/code&gt;分隔符，分割两个句子&lt;/p&gt;
+&lt;h4 id="优化目标-1"&gt;优化目标&lt;/h4&gt;
+&lt;p&gt;$$\mathcal{L}_{NSP} = - \left[ y \log \hat{y} + (1-y) \log (1-\hat{y}) \right]$$&lt;/p&gt;</description></item></channel></rss>
