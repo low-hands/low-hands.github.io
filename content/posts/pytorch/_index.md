@@ -3,6 +3,6 @@ title: Pytorch
 menu:
   sidebar:
     name: Pytorch
-    identifier: torch
+    identifier: pytorch
     weight: 300
 ---
