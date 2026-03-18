@@ -19,7 +19,7 @@ company:
 # resume: "files/resume.pdf"
 
 # a summary about you
-summary: '我目前就读于不列颠哥伦比亚大学（UBC）温哥华校区电子与计算机工程系，攻读工学硕士学位。我对人工智能开发领域深感兴趣，尤其专注于推荐系统与检索增强生成（RAG）技术的研究。'
+summary: '我目前就读于不列颠哥伦比亚大学（UBC）温哥华校区电子与计算机工程系，攻读工学硕士学位。我对人工智能开发领域深感兴趣，尤其专注于视觉语言模型和扩散语言模型的研究。'
 
 # your social links
 # give as many as you want. use font-awesome for the icons.
@@ -61,7 +61,7 @@ socialLinks:
 # For example, you can put link for your resume.
 resourceLinks:
 - title: "简历"
-  url: "files/resume_rui.pdf"
+  url: "files/resume_zh.pdf"
 
 # Show your badges
 # You can show your verifiable certificates from https://www.credly.com.

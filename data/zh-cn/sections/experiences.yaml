@@ -27,8 +27,8 @@ experiences:
     # end: Dec 2020
     # give some points about what was your responsibilities at the company.
     responsibilities:
-    - 开发了一款高性能向量搜索引擎
-    - 参与了基于大型语言模型增强的推荐系统的预研
+    - 参与面向 IDE 续写场景的 Java 代码大模型研发
+    - 负责模型 SFT 阶段的数据流构建以及 DPO 阶段基于线上真实 Badcase 的偏好对齐优化，实现模型离线准确率与线上真实采纳率的双重提升。
 
   # - designation: Junior Software Engineer
   #   start: Nov 2017

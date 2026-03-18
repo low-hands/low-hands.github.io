@@ -19,7 +19,7 @@ company:
 # resume: "files/resume.pdf"
 
 # a summary about you
-summary: 'I am a Master of Engineering student in the Department of Electronical and Computer Engineering at UBC, Vancouver. I am interested in AI development, especially in recommendation systems and RAG.'
+summary: 'I am a Master of Engineering student in the Department of Electronical and Computer Engineering at UBC, Vancouver. I am interested in Vision Language Models and Diffusion LLMs.'
 
 # your social links
 # give as many as you want. use font-awesome for the icons.
@@ -61,7 +61,7 @@ socialLinks:
 # For example, you can put link for your resume.
 resourceLinks:
 - title: "My Resume"
-  url: "files/resume_rui.pdf"
+  url: "files/resume_en.pdf"
 
 # Show your badges
 # You can show your verifiable certificates from https://www.credly.com.

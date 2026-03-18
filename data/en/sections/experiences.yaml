@@ -27,8 +27,8 @@ experiences:
     # end: Dec 2020
     # give some points about what was your responsibilities at the company.
     responsibilities:
-    - Developed a high-performance Vector Search Engine.
-    - Participated in the pre-research on LLM-enhanced Recommendation System.
+    - Contributed to the development of a large-scale Java language model for IDE code completion scenarios
+    - Led the construction of data flows for the model’s SFT phase and optimized preference alignment in the DPO phase using real-world bad cases from production, thereby achieving dual improvements in both offline accuracy and online adoption rates.
 
   # - designation: Junior Software Engineer
   #   start: Nov 2017
